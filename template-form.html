@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Template - FoodBank Connect</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">FoodBank Connect</div>
+            <a href="dashboard.html" class="btn btn-secondary">Back to Dashboard</a>
+        </header>
+
+        <main style="max-width: 600px; margin: 0 auto;">
+            <div class="card">
+                <h2>Create/Edit Template</h2>
+                <form onsubmit="event.preventDefault(); window.location.href='dashboard.html'">
+                    <div class="form-group">
+                        <label class="form-label">Template Name</label>
+                        <input type="text" class="form-input" placeholder="e.g. Weekly Morning Distribution" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Ticket Type</label>
+                        <select class="form-select">
+                            <option>Standard Ticket</option>
+                            <option>Family Package</option>
+                            <option>Emergency Box</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Start Time</label>
+                        <input type="time" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <div style="display: grid; gap: 1rem; grid-template-columns: 1fr 1fr;">
+                            <div>
+                                <label class="form-label">Tickets Per Period</label>
+                                <input type="number" class="form-input" placeholder="50" required>
+                            </div>
+                            <div>
+                                <label class="form-label">Num Periods</label>
+                                <input type="number" class="form-input" placeholder="1" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Additional Info</label>
+                        <textarea class="form-input" rows="4" placeholder="Instructions for attendees..."></textarea>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <button type="submit" class="btn btn-primary" style="flex: 1;">Save Template</button>
+                        <a href="dashboard.html" class="btn btn-secondary" style="flex: 1;">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

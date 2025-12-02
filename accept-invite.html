@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accept Invitation - FoodBank Connect</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">FoodBank Connect</div>
+        </header>
+
+        <main style="max-width: 600px; margin: 0 auto;">
+            <div class="card">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2>You've been invited!</h2>
+                    <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary);">
+                        <strong>Community Food Share</strong> wants you to join their team as a
+                        <strong>Coordinator</strong>.
+                    </p>
+                </div>
+
+                <div class="auth-tabs"
+                    style="display: flex; margin-bottom: 2rem; border-bottom: 2px solid var(--color-border);">
+                    <button class="tab-btn active" onclick="switchTab('new')"
+                        style="flex: 1; padding: 1rem; background: none; border: none; font-size: var(--font-size-lg); font-weight: 600; cursor: pointer; color: var(--color-primary); border-bottom: 4px solid var(--color-primary); margin-bottom: -2px;">Create
+                        Account</button>
+                    <button class="tab-btn" onclick="switchTab('existing')"
+                        style="flex: 1; padding: 1rem; background: none; border: none; font-size: var(--font-size-lg); font-weight: 600; cursor: pointer; color: var(--color-text-secondary);">I
+                        have an account</button>
+                </div>
+
+                <!-- New User Form -->
+                <div id="new-user-form" style="display: block;">
+                    <form onsubmit="event.preventDefault(); window.location.href='dashboard.html'">
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" value="volunteer@gmail.com" disabled
+                                style="background-color: #f0f0f0; cursor: not-allowed;">
+                            <small style="color: var(--color-text-secondary);">This invite is linked to this
+                                email.</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-input" placeholder="Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Create Password</label>
+                            <input type="password" class="form-input" placeholder="Min 8 characters" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%">Create Account & Join</button>
+                    </form>
+                </div>
+
+                <!-- Existing User Form -->
+                <div id="existing-user-form" style="display: none;">
+                    <form onsubmit="event.preventDefault(); window.location.href='dashboard.html'">
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" value="volunteer@gmail.com" disabled
+                                style="background-color: #f0f0f0; cursor: not-allowed;">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-input" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%">Sign In & Accept
+                            Invite</button>
+                    </form>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        window.switchTab = function (tab) {
+            const newBtn = document.querySelectorAll('.tab-btn')[0];
+            const existBtn = document.querySelectorAll('.tab-btn')[1];
+            const newForm = document.getElementById('new-user-form');
+            const existForm = document.getElementById('existing-user-form');
+
+            if (tab === 'new') {
+                newBtn.style.color = 'var(--color-primary)';
+                newBtn.style.borderBottom = '4px solid var(--color-primary)';
+                existBtn.style.color = 'var(--color-text-secondary)';
+                existBtn.style.borderBottom = 'none';
+                newForm.style.display = 'block';
+                existForm.style.display = 'none';
+            } else {
+                existBtn.style.color = 'var(--color-primary)';
+                existBtn.style.borderBottom = '4px solid var(--color-primary)';
+                newBtn.style.color = 'var(--color-text-secondary)';
+                newBtn.style.borderBottom = 'none';
+                existForm.style.display = 'block';
+                newForm.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

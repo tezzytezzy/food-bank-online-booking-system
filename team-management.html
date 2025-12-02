@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Management - FoodBank Connect</title>
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--color-surface);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .badge-admin {
+            background-color: #E3F2FD;
+            color: #1565C0;
+        }
+
+        .badge-coordinator {
+            background-color: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .badge-pending {
+            background-color: #FFF3E0;
+            color: #EF6C00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">FoodBank Connect</div>
+            <a href="dashboard.html" class="btn btn-secondary">Back to Dashboard</a>
+        </header>
+
+        <main>
+            <div class="section-header">
+                <h2>Team Management</h2>
+                <button onclick="openModal()" class="btn btn-primary">+ Invite Member</button>
+            </div>
+
+            <div class="card">
+                <h3>Active Members</h3>
+
+                <div class="list-item">
+                    <div>
+                        <p><strong>Sarah Jenkins</strong> (You)</p>
+                        <p class="text-secondary">sarah.j@communityfood.org</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="badge badge-admin">Admin</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div>
+                        <p><strong>Mike Ross</strong></p>
+                        <p class="text-secondary">mike.r@communityfood.org</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="badge badge-coordinator">Coordinator</span>
+                        <button class="icon-btn delete" aria-label="Remove">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path
+                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Pending Invitations</h3>
+
+                <div class="list-item">
+                    <div>
+                        <p><strong>volunteer@gmail.com</strong></p>
+                        <p class="text-secondary">Invited on Oct 24, 2023</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <span class="badge badge-pending">Pending</span>
+                        <button class="icon-btn delete" aria-label="Revoke">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Invite Modal -->
+    <div id="inviteModal" class="modal">
+        <div class="modal-content">
+            <h2>Invite New Member</h2>
+            <p style="margin-bottom: 1.5rem;">Send an invitation email to add a new member to your organisation.</p>
+
+            <form onsubmit="event.preventDefault(); closeModal(); alert('Invitation sent!');">
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="colleague@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Role</label>
+                    <select class="form-select">
+                        <option value="coordinator">Coordinator (Can manage sessions)</option>
+                        <option value="admin">Admin (Full access)</option>
+                        <option value="viewer">Viewer (Read only)</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Send Invitation</button>
+                    <button type="button" onclick="closeModal()" class="btn btn-secondary"
+                        style="flex: 1;">Cancel</button>
+                </div>
+                <div style="margin-top: 1rem; text-align: center;">
+                    <a href="accept-invite.html" target="_blank"
+                        style="font-size: 0.9rem; color: var(--color-text-secondary);">(Demo: Simulate Recipient
+                        View)</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        window.openModal = function () {
+            document.getElementById('inviteModal').classList.add('active');
+        }
+        window.closeModal = function () {
+            document.getElementById('inviteModal').classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>

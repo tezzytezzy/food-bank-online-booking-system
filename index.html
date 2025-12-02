@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Bank Sessions</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">FoodBank Connect</div>
+        <a href="org-auth.html" class="btn btn-primary">Organisation Sign-in/up</a>
+      </header>
+
+      <main>
+        <h1>Upcoming Sessions</h1>
+        
+        <div class="card">
+          <div class="form-group">
+            <label class="form-label">Filter by Location</label>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <select class="form-select" style="flex: 1; min-width: 150px;">
+                <option>Select Country</option>
+                <option>Canada</option>
+                <option>USA</option>
+              </select>
+              <select class="form-select" style="flex: 1; min-width: 150px;">
+                <option>Select State/Province</option>
+                <option>Ontario</option>
+                <option>Quebec</option>
+              </select>
+              <select class="form-select" style="flex: 1; min-width: 150px;">
+                <option>Select City</option>
+                <option>Toronto</option>
+                <option>Ottawa</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="sessions-list">
+          <!-- Mock Data -->
+          <div class="card">
+            <h3>Community Food Share</h3>
+            <p><strong>Date:</strong> Oct 25, 2023 - 10:00 AM</p>
+            <p><strong>Location:</strong> Toronto, ON</p>
+            <div style="margin-top: 1rem;">
+              <button class="btn btn-secondary">View Details</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Downtown Relief Center</h3>
+            <p><strong>Date:</strong> Oct 26, 2023 - 2:00 PM</p>
+            <p><strong>Location:</strong> Toronto, ON</p>
+            <div style="margin-top: 1rem;">
+              <button class="btn btn-secondary">View Details</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>West End Support</h3>
+            <p><strong>Date:</strong> Oct 27, 2023 - 9:00 AM</p>
+            <p><strong>Location:</strong> Mississauga, ON</p>
+            <div style="margin-top: 1rem;">
+              <button class="btn btn-secondary">View Details</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
