@@ -17,24 +17,22 @@
         <main style="max-width: 600px; margin: 0 auto;">
             <div class="card">
                 <h2>Schedule Session</h2>
-                <form onsubmit="event.preventDefault(); window.location.href='dashboard.html'">
+                <form>
                     <div class="form-group">
                         <label class="form-label">Select Template</label>
-                        <select class="form-select">
-                            <option>Weekly Morning Distribution</option>
-                            <option>Emergency Food Box</option>
-                            <option>Custom / One-off</option>
+                        <select id="template-select" class="form-select">
+                            <option>Loading templates...</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Date</label>
-                        <input type="date" class="form-input" required>
+                        <input type="date" id="session-date" class="form-input" required>
                     </div>
 
                     <div class="form-group">
                         <label class="form-label">Status</label>
-                        <select class="form-select">
+                        <select id="session-status" class="form-select">
                             <option value="active">Active</option>
                             <option value="cancelled">Cancelled</option>
                             <option value="completed">Completed</option>

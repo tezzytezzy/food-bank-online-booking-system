@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - FoodBank Connect</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        .dashboard-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            margin-bottom: 0.5rem;
+        }
+
+        .list-item-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .icon-btn:hover {
+            background-color: var(--color-background);
+            color: var(--color-primary);
+        }
+
+        .icon-btn.delete:hover {
+            color: var(--color-error);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">FoodBank Connect</div>
+            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                <span>Welcome, Community Food Share</span>
+                <a href="team-management.html" class="btn btn-secondary">Manage Team</a>
+                <a href="/index.html" class="btn btn-secondary">Sign Out</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- Templates Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Recurring Templates</h2>
+                    <a href="template-form.html" class="btn btn-primary">+ Create Template</a>
+                </div>
+
+                <div id="templates-list">
+                    <p>Loading templates...</p>
+                </div>
+            </section>
+
+            <!-- Sessions Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Scheduled Sessions</h2>
+                    <a href="session-form.html" class="btn btn-primary">+ Schedule Session</a>
+                </div>
+
+                <div id="sessions-list">
+                    <p>Loading sessions...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
