@@ -32,7 +32,7 @@ Open the provided localhost URL in your browser.
 -   Navigate to `/pages/dashboard.html`. You should be redirected to `/pages/org-auth.html`.
 -   **Sign Up**:
     -   Click "Register Org".
-    -   Fill in the details (Org Name, Email, Password, etc.).
+    -   Fill in the details (Org Name, Full Name, Email, Password, etc.).
     -   Click "Create Account".
     -   You should be alerted of success and the page will reload.
 -   **Sign In**:
@@ -58,9 +58,22 @@ Open the provided localhost URL in your browser.
 
 ### 7. Team Management
 -   From the Dashboard, click **"Manage Team"**.
--   Verify you can send invitations.
--   **Sign Out**: Click "Sign Out" in the header. You should be redirected to the auth page.
+-   Click **"+ Invite Member"**.
+-   Enter an email and select a role.
+-   Click **"Send Invitation"**.
+-   **Simulation**: An alert will appear with an **Invitation Link**. Copy this link.
+-   **Accept Invite**:
+    -   Paste the link into a new tab (or log out first).
+    -   You will see the invitation details.
+    -   Fill in the "Create Account" form.
+    -   Click **"Create Account & Join"**.
+    -   **Magic Link**: Supabase will send a confirmation email to the address you entered.
+    -   Since this is a real Supabase project, check the email inbox for the "Confirm your signup" link.
+    -   Clicking that link will confirm the account and log you in.
+-   **Verify Active Members**:
+    -   After the new user joins, refresh the "Manage Team" page.
+    -   The new member should now appear in the "Active Members" list.
 
 ## Notes
--   Since we don't have a full authentication flow yet, I've mocked the "Current Organization" logic to automatically create/use a default organization ("My Food Bank") when you perform actions.
+-   Since we don't have a full authentication flow yet, I've mocked the "Current Organisation" logic to automatically create/use a default organisation ("My Food Bank") when you perform actions.
 -   The "Delete" buttons on the dashboard will prompt for confirmation before deleting data from Supabase.

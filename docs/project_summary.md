@@ -1,7 +1,7 @@
 # Project Summary: FoodBank Connect (Wireframe/Prototype)
 
 ## Overview
-This project is a high-fidelity wireframe/prototype for an online food bank ticketing system. It demonstrates the core workflows for organizations to manage their sessions and for users to view available slots. The project is built using **HTML, CSS, and Vanilla JavaScript**, powered by **Vite**.
+This project is a high-fidelity wireframe/prototype for an online food bank ticketing system. It demonstrates the core workflows for organisations to manage their sessions and for users to view available slots. The project is built using **HTML, CSS, and Vanilla JavaScript**, powered by **Vite**.
 
 ## Key Features Implemented
 
@@ -11,12 +11,12 @@ This project is a high-fidelity wireframe/prototype for an online food bank tick
     -   Includes a filtering interface for Location (Country, State/Province, City).
     -   "Organisation Sign-in/up" entry point.
 
-### 2. Organization Management
+### 2. Organisation Management
 -   **Authentication (`org-auth.html`)**:
     -   Tabbed interface for **Sign In** and **Register Organisation**.
     -   Registration captures details like Name, Email, Website, and Location.
 -   **Dashboard (`dashboard.html`)**:
-    -   Central hub for logged-in organizations.
+    -   Central hub for logged-in organisations.
     -   **Recurring Templates**: View, Edit, and Delete templates for recurring events.
     -   **Scheduled Sessions**: View upcoming and past sessions with status indicators (Active, Completed).
 
